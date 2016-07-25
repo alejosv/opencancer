@@ -39,8 +39,10 @@ Royal College of Pathologists of Australasia. Prostate Cancer (Radical Prostatec
 Royal College of Pathologists. Dataset for prostate cancer histopathology reports [Internet]. 2009 ;[cited 2009 Jul 30 ]
 Available from: http://www.rcpath.org/index.asp?PageID=1164
 
-College of American Pathologists. Protocol for the examination of specimens from patients with invasive carcinomas of the prostate gland [Internet]. 2007 Apr ;[cited 2009 Jul 30 ] Available from: http://www.cap.org/apps/docs/committees/cancer/cancer_protocols/2006/prostate06_ckw.pdf">
-		["MD5-CAM-1.0.1"] = <"E1635C9200036D7B429A1805754132C0">
+College of American Pathologists. Protocol for the examination of specimens from patients with invasive carcinomas of the prostate gland [Internet]. 2007 Apr ;[cited 2009 Jul 30 ] Available from: http://www.cap.org/apps/docs/committees/cancer/cancer_protocols/2006/prostate06_ckw.pdf
+
+Epstein JI, Zelefsky MJ, Sjoberg DD, Nelson JB, Egevad L, Magi-Galluzzi C, Vickers AJ, Parwani AV, Reuter VE, Fine SW, Eastham JA. A contemporary prostate cancer grading system: a validated alternative to the Gleason score. European urology. 2016 Mar 31;69(3):428-35.">
+		["MD5-CAM-1.0.1"] = <"CFBCFF9809993C3D94E3B29551BBEF99">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
 		["custodian_organisation"] = <"UK Clinical Models">
 	>
@@ -82,6 +84,15 @@ definition
 					}
 				}
 			}
+			ELEMENT[at0265] occurrences matches {0..1} matches {	-- Gleason Grade Group
+				value matches {
+					1|[local::at0266], 	-- Grade Group 1
+					2|[local::at0267], 	-- Grade Group 2
+					3|[local::at0268], 	-- Grade Group 3
+					4|[local::at0269], 	-- Grade Group 4
+					5|[local::at0270]  	-- Grade Group 5
+				}
+			}
 		}
 	}
 
@@ -92,15 +103,15 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Gleason Score">
-					description = <"Gleason Score (ISUP2005 version) - a prostate cancer grading score ratified by the International Society of Urological Pathologists (ISUP).">
+					description = <"Gleason Score (ISUP2005 version) - a prostate cancer grading score ratified by the International Society of Urological Pathologists (ISUP), including Gleason Grade Groups. ">
 				>
 				["at0166"] = <
 					text = <"Primary Gleason grade">
-					description = <"The primary Gleason grade">
+					description = <"The primary Gleason grade.">
 				>
 				["at0182"] = <
 					text = <"Secondary Gleason grade">
-					description = <"The secondary Gleason grade">
+					description = <"The secondary Gleason grade.">
 				>
 				["at0183"] = <
 					text = <"Tertiary Gleason grade">
@@ -170,6 +181,30 @@ ontology
 				["at0264"] = <
 					text = <"Grade 5">
 					description = <"The tissue does not have recognizable glands. There are often just sheets of cells throughout the surrounding tissue.">
+				>
+				["at0265"] = <
+					text = <"Gleason Grade Group">
+					description = <"The Gleason Grade Group.">
+				>
+				["at0266"] = <
+					text = <"Grade Group 1">
+					description = <"Gleason score less than or equal to 6.">
+				>
+				["at0267"] = <
+					text = <"Grade Group 2">
+					description = <"Gleason score 7 (Primary grade 3 + Secondary grade 4).">
+				>
+				["at0268"] = <
+					text = <"Grade Group 3">
+					description = <"Gleason score 7 (Primary grade 4 + Secondary grade 3).">
+				>
+				["at0269"] = <
+					text = <"Grade Group 4">
+					description = <"Gleason score 8.">
+				>
+				["at0270"] = <
+					text = <"Grade Group 5">
+					description = <"Gleason score 9-10.">
 				>
 			>
 		>
