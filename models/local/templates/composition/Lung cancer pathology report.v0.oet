@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>313ebe7d-8625-4dfe-ba06-b3582ae5814f</id>
+  <name>Lung cancer pathology report.v0</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Report">
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" path="/content" hide_on_form="true">
+      <Rule path="/data[at0001]" hide_on_form="true" />
+      <Rule path="/data[at0001]/items[at0002]" name="Primary diagnosis" />
+      <Rule path="/data[at0001]/items[at0012]" max="0" />
+      <Rule path="/data[at0001]/items[at0077]" max="0" />
+      <Rule path="/data[at0001]/items[at0003]" max="0" />
+      <Rule path="/data[at0001]/items[at0005]" max="0" />
+      <Rule path="/data[at0001]/items[at0072]" max="0" />
+      <Rule path="/data[at0001]/items[at0030]" max="0" />
+      <Rule path="/data[at0001]/items[at0073]" max="0" />
+      <Rule path="/data[at0001]/items[at0069]" max="0" />
+      <Rule path="/protocol[at0032]" hide_on_form="true" />
+      <Rule path="/protocol[at0032]/items[at0070]" max="0" />
+    </Content>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test-histopathology.v0" concept_name="Histopathology test" path="/content" hide_on_form="true">
+      <Rule path="/data[at0001]" hide_on_form="true" />
+      <Rule path="/data[at0001]/events[at0002]" hide_on_form="true">
+        <eventConstraint>
+          <allowedType>PointInTime</allowedType>
+        </eventConstraint>
+      </Rule>
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0077]" name="Pathology investigation type">
+        <constraint xsi:type="textConstraint">
+          <includedValues>CY	Cytology</includedValues>
+          <includedValues>BU	Biopsy NOS</includedValues>
+          <includedValues>EX	Excision</includedValues>
+          <includedValues>PE	Partial Excision</includedValues>
+          <includedValues>RE	Radical Excision</includedValues>
+          <includedValues>FE	Further Excision</includedValues>
+          <includedValues>CU	Curettage</includedValues>
+          <includedValues>SB	Shave Biopsy</includedValues>
+          <includedValues>PB	Punch Biopsy</includedValues>
+          <includedValues>IB	Incisional Biopsy</includedValues>
+          <includedValues>99	Uncertain/other</includedValues>
+        </constraint>
+      </Rule>
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0100]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]" hide_on_form="true">
+        <nameConstraint>
+          <excludedValues>local::at0.120</excludedValues>
+          <excludedValues>local::at0.121</excludedValues>
+          <excludedValues>local::at0.122</excludedValues>
+        </nameConstraint>
+      </Rule>
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]" hide_on_form="true" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]/items[at0.124]" hide_on_form="true" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]/items[at0.126]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0101]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/state[at0112]" hide_on_form="true" />
+      <Rule path="/data[at0001]/events[at0002]/state[at0112]/items[at0113]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0111]" max="0" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v0" concept_name="Specimen" path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]/items[at0.125]" hide_on_form="true">
+        <Rule path="/items[at0029]">
+          <constraint xsi:type="textConstraint">
+            <includedValues>Primary tumour</includedValues>
+            <includedValues>Further excision of primary tumour</includedValues>
+            <includedValues>Regional Lymph Nodes</includedValues>
+            <includedValues>Metastatic site other than regional lymph nodes</includedValues>
+            <includedValues>Not Known</includedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/items[at0015]" name="Sample collection date" />
+        <Rule path="/items[at0008]" max="0" />
+        <Rule path="/items[at0007]" max="0" />
+        <Rule path="/items[at0079]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+        <Rule path="/items[at0067]" max="0" />
+        <Rule path="/items[at0070]" max="0" />
+        <Rule path="/items[at0080]" max="0" />
+        <Rule path="/items[at0039]" max="0" />
+        <Rule path="/items[at0046]" hide_on_form="true" />
+        <Rule path="/items[at0046]/items[at0034]" name="Date specimen received" />
+        <Rule path="/items[at0046]/items[at0001]" max="0" />
+        <Rule path="/items[at0081]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.macroscopy_lung_carcinoma.v1" concept_name="Macroscopic findings - Lung cancer" path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]/items[at0.127]" hide_on_form="true">
+        <Rule path="/items[at0002]" max="0" />
+        <Rule path="/items[at0007]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_invasion.v1" concept_name="Tumour - direct invasion" path="/items[at0004]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0012]" name="Invasion">
+            <constraint xsi:type="textConstraint">
+              <includedValues>NU	No - vascular/lymphatic invasion not present</includedValues>
+              <includedValues>YU	Yes - vascular/lymphatic invasion present</includedValues>
+              <includedValues>YV	Vascular invasion only present</includedValues>
+              <includedValues>YL	Lymphatic invasion only present</includedValues>
+              <includedValues>YB	Both lymphatic and vascular invasion present"</includedValues>
+              <includedValues>UU	Uncertain whether vascular/lymphatic invasion is present or not</includedValues>
+              <includedValues>XX	Cannot be assessed</includedValues>
+              <includedValues>99	Not Known</includedValues>
+            </constraint>
+          </Rule>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v1" concept_name="Tumour - Surgical resection margins" path="/items[at0005]" hide_on_form="true">
+          <Rule path="/items[at0018]" max="0" />
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0006]" hide_on_form="true" />
+          <Rule path="/items[at0006]/items[at0007]" max="0" />
+          <Rule path="/items[at0006]/items[at0020]" name="Excision margin">
+            <constraint xsi:type="textConstraint">
+              <includedValues>Excision margins are clear (distance from margin not stated)</includedValues>
+              <includedValues>Excision margins are clear (tumour &gt;5mm from the margin)</includedValues>
+              <includedValues>Excision margins are clear (tumour &gt;1mm but less than or equal to 5mm from the margin</includedValues>
+              <includedValues>Tumour is less than or equal to 1mm from excision margin, but does not reach margin</includedValues>
+              <includedValues>Tumour reaches excision margin</includedValues>
+              <includedValues>Uncertain</includedValues>
+              <includedValues>Margin not involved =&gt;1mm</includedValues>
+              <includedValues>Margin not involved   &lt;1mm</includedValues>
+              <includedValues>Margin not involved 1-5mm</includedValues>
+              <includedValues>Not applicable</includedValues>
+              <includedValues>Not Known</includedValues>
+            </constraint>
+          </Rule>
+          <Rule path="/items[at0008]" max="0" />
+          <Rule path="/items[at0010]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.lymph_node_metastases.v1" concept_name="Tumour- Lymph node metastases" path="/items[at0006]" hide_on_form="true">
+          <Rule path="/items[at0041]" max="0" />
+          <Rule path="/items[at0044]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+          <Rule path="/items[at0011]" max="0" />
+          <Rule path="/items[at0046]" max="0" />
+          <Rule path="/items[at0009]" max="0" />
+          <Rule path="/items[at0039]" max="0" />
+          <Rule path="/items[at0040]" max="0" />
+          <Rule path="/items[at0051]" max="0" />
+          <Rule path="/items[at0052]" max="0" />
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.microscopy_lung_carcinoma_cosd.v1" concept_name="Microscopic findings - Lung cancer (COSD)" path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]/items[at0.127]" hide_on_form="true">
+        <Rule path="/items[at0269]" hide_on_form="true" />
+        <Rule path="/items[at0244]" max="0" />
+        <Rule path="/items[at0275]" max="0" />
+        <Rule path="/items[at0289]" max="0" />
+        <Rule path="/items[at0252]" max="0" />
+        <Rule path="/items[at0030]" max="0" />
+        <Rule path="/items[at0179]/items[at0250]" max="0" />
+        <Rule path="/items[at0179]/items[at0220]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_invasion.v1" concept_name="Tumour - direct invasion" path="/items[at0269]/items[at0298]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0003]" name="Pericardial invasion">
+            <constraint xsi:type="textConstraint">
+              <excludedValues>local::at0013</excludedValues>
+              <excludedValues>local::at0014</excludedValues>
+              <excludedValues>local::at0015</excludedValues>
+            </constraint>
+          </Rule>
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0012]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_invasion.v1" concept_name="Tumour - direct invasion" path="/items[at0269]/items[at0299]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0003]" name="Diaphragm invasion">
+            <constraint xsi:type="textConstraint">
+              <excludedValues>local::at0013</excludedValues>
+              <excludedValues>local::at0014</excludedValues>
+              <excludedValues>local::at0015</excludedValues>
+            </constraint>
+          </Rule>
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0012]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_invasion.v1" concept_name="Tumour - direct invasion" path="/items[at0269]/items[at0305]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0003]" name="Great vessel invasion">
+            <constraint xsi:type="textConstraint">
+              <excludedValues>local::at0013</excludedValues>
+              <excludedValues>local::at0014</excludedValues>
+              <excludedValues>local::at0015</excludedValues>
+            </constraint>
+          </Rule>
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0012]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tumour_invasion.v1" concept_name="Tumour - direct invasion" path="/items[at0269]/items[at0300]" hide_on_form="true">
+          <Rule path="/items[at0001]" max="0" />
+          <Rule path="/items[at0003]" name="Invasion into heart">
+            <constraint xsi:type="textConstraint">
+              <excludedValues>local::at0013</excludedValues>
+              <excludedValues>local::at0014</excludedValues>
+              <excludedValues>local::at0015</excludedValues>
+            </constraint>
+          </Rule>
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0012]" max="0" />
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.cancer_diag_additional_info_uk.v0" concept_name="Cancer diagnosis additional info UK" path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]/items[at0.123]/items[at0.127]">
+        <Rule path="/items[at0001]" max="0" />
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0031]" max="0" />
+        <Rule path="/items[at0039]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tnm_staging_7th-lung.v1" concept_name="Tumour - Lung cancer TNM staging 7th Edition" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0.130]" name="Staging (pathological)">
+        <Rule path="/items[at0025]" max="0" />
+        <Rule path="/items[at0010]" max="0" />
+        <Rule path="/items[at0052]" max="0" />
+        <Rule path="/items[at0012]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1" concept_name="Individual professional demographics (UK)" max="1" path="/protocol[at0004]/items[at0017]" hide_on_form="true">
+        <Rule path="/items[at0006]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0011]" max="1" name="Pathologist consultant code" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0018]" hide_on_form="true">
+          <Rule path="/items[at0001]" name="Reporting organisation name" />
+          <Rule path="/items[at0011]" name="Reporting organisation code" />
+          <Rule path="/items[at0005]" max="0" />
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1" concept_name="Individual professional demographics (UK)" max="1" path="/protocol[at0004]/items[at0094]/items[at0090]" hide_on_form="true">
+        <Rule path="/items[at0006]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+        <Rule path="/items[at0012]" max="0" />
+        <Rule path="/items[at0011]" max="1" name="Requesting care professional code" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0018]" hide_on_form="true">
+          <Rule path="/items[at0001]" name="Requesting organisation name" />
+          <Rule path="/items[at0011]" name="Requesting organisation code" />
+          <Rule path="/items[at0005]" max="0" />
+        </Items>
+      </Items>
+    </Content>
+    <Context>
+      <Rule path="/context/other_context[at0001]" hide_on_form="true" />
+      <Rule path="/context/other_context[at0001]/items[at0002]" name="Service report ID" />
+      <Rule path="/context/other_context[at0001]/items[at0005]" name="Service report status">
+        <constraint xsi:type="textConstraint">
+          <includedValues>1	Final (complete)</includedValues>
+          <includedValues>2	Preliminary (Interim)</includedValues>
+          <includedValues>3	Test not available</includedValues>
+          <includedValues>4	Unspecified</includedValues>
+          <includedValues>5	Supplementary/second opinion</includedValues>
+        </constraint>
+      </Rule>
+      <hide_on_form>true</hide_on_form>
+    </Context>
+  </definition>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-COMPOSITION.report.v1">
+    <digest id="MD5-CAM-1.0.1">FD053BE0456D849CACD864F274EED32E</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1">
+    <digest id="MD5-CAM-1.0.1">88AF7BC619F0DF958D2F00293756F398</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test-histopathology.v0">
+    <digest id="MD5-CAM-1.0.1">8DF43DCA388FB6E507261353FF09FBF3</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.specimen.v0">
+    <digest id="MD5-CAM-1.0.1">B7C024AA4791F08D81587F03DB111B2D</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.macroscopy_lung_carcinoma.v1">
+    <digest id="MD5-CAM-1.0.1">ED65E910C6DDAE2FF9CA11739A4AE7F4</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tumour_invasion.v1">
+    <digest id="MD5-CAM-1.0.1">25F4156BBAE9989CE4793B0B3637CB57</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tumour_resection_margins.v1">
+    <digest id="MD5-CAM-1.0.1">D1C5FF9647E00C3B138D02C481F779C1</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.lymph_node_metastases.v1">
+    <digest id="MD5-CAM-1.0.1">E9C471D86D4B13E3952E2826DF8446F5</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.microscopy_lung_carcinoma_cosd.v1">
+    <digest id="MD5-CAM-1.0.1">CAC5A38A0D5264EA5F16EF0D00550BFA</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.cancer_diag_additional_info_uk.v0">
+    <digest id="MD5-CAM-1.0.1">3B2D7A2E38AFF154EDF2097841C7B083</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tnm_staging_7th-lung.v1">
+    <digest id="MD5-CAM-1.0.1">E8744BA45A466468F8CDBAD835B53AE5</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1">
+    <digest id="MD5-CAM-1.0.1">D8FF4CD54F4850A1A914AAEBA3A6FEDF</digest>
+  </integrity_checks>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.organisation.v1">
+    <digest id="MD5-CAM-1.0.1">B932A22934CC38489610A47273A86DA8</digest>
+  </integrity_checks>
+</template>

@@ -1,0 +1,346 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.cancer_diag_additional_info_uk.v0
+
+concept
+	[at0000]	-- Cancer diagnosis additional info UK
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Hildegard Franke">
+		["email"] = <"hildi@freshehr.com">
+		["organisation"] = <"freshEHR Clinical Informatics Ltd.">
+		["date"] = <"2016-05-05">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <"Dr Ian McNicoll, freshEHR Clinical Informatics Ltd.", ...>
+	other_details = <
+		["current_contact"] = <"Hildegard Franke, freshEHR Clinical Informatics Ltd.<hildi@freshehr.com>">
+		["MD5-CAM-1.0.1"] = <"3B2D7A2E38AFF154EDF2097841C7B083">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Cancer diagnosis additional info UK
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Basis of diagnosis
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0023, 	-- Clinical
+							at0024, 	-- Clinical Investigation
+							at0025, 	-- Specific tumour markers
+							at0026, 	-- Cytology
+							at0027, 	-- Histology of a metastasis
+							at0028, 	-- Histology of a primary tumour
+							at0029, 	-- Unknown
+							at0030]	-- Death Certificate
+						}
+					}
+				}
+			}
+			ELEMENT[at0044] occurrences matches {0..1} matches {	-- Tumour laterality
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0045, 	-- Left
+							at0046, 	-- Right
+							at0047, 	-- Midline
+							at0048, 	-- Bilateral
+							at0049, 	-- Not applicable
+							at0050]	-- Not Known
+						}
+					}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {	-- Morphology
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0043] occurrences matches {0..1} matches {	-- Topography
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0012] occurrences matches {0..1} matches {	-- Metastatic site
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0013, 	-- Brain
+							at0014, 	-- Liver
+							at0015, 	-- Lung
+							at0016, 	-- Multiple
+							at0017, 	-- Unknown site
+							at0018, 	-- Skin
+							at0019, 	-- Distant lymph nodes
+							at0020, 	-- Bone
+							at0021, 	-- Bone marrow
+							at0022]	-- Other site
+						}
+					}
+				}
+			}
+			ELEMENT[at0031] occurrences matches {0..1} matches {	-- Clinical Nurse Specialist indication code
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0032, 	-- Yes present
+							at0033, 	-- Yes not present at diagnosis
+							at0034, 	-- Yes not present at diagnosis but saw patient in same session
+							at0035, 	-- Yes not present a diagnosis but saw patient at different time
+							at0036, 	-- No patient not seen but nurse specialist informed of diagnosis
+							at0037, 	-- No patient not seen and nurse specialist NOT informed of diagnosis
+							at0038]	-- Not known
+						}
+					}
+				}
+			}
+			ELEMENT[at0039] occurrences matches {0..1} matches {	-- Cancer recurrence care plan indicator
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0040, 	-- Yes including local
+							at0041, 	-- Yes not including local
+							at0042]	-- No
+						}
+					}
+				}
+			}
+			ELEMENT[at0051] occurrences matches {0..1} matches {	-- Synchronous tumour indicator
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0052, 	-- N No
+							at0053, 	-- Y Yes
+							at0054]	-- 9 Not known
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"QMR96", ...>
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cancer diagnosis additional info UK">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Basis of diagnosis">
+					description = <"Describes the method used to confirm the cancer (as per COSD dataset v6.0).">
+				>
+				["at0011"] = <
+					text = <"Morphology">
+					description = <"This is the PATIENT DIAGNOSIS using the SNOMED code for the cell type of the malignant disease recorded as part of a Cancer Care Spell. This can be recorded as well as or instead of MORPHOLOGY (ICD03).">
+				>
+				["at0012"] = <
+					text = <"Metastatic site">
+					description = <"The site of the metastatic disease, if any, at diagnosis.">
+				>
+				["at0013"] = <
+					text = <"Brain">
+					description = <"Brain">
+				>
+				["at0014"] = <
+					text = <"Liver">
+					description = <"Liver">
+				>
+				["at0015"] = <
+					text = <"Lung">
+					description = <"Lung">
+				>
+				["at0016"] = <
+					text = <"Multiple">
+					description = <"Multiple metastatic sites">
+				>
+				["at0017"] = <
+					text = <"Unknown site">
+					description = <"Unknown metastatic site">
+				>
+				["at0018"] = <
+					text = <"Skin">
+					description = <"Skin">
+				>
+				["at0019"] = <
+					text = <"Distant lymph nodes">
+					description = <"Distant lymph nodes">
+				>
+				["at0020"] = <
+					text = <"Bone">
+					description = <"Bone (excluding Bone Marrow)">
+				>
+				["at0021"] = <
+					text = <"Bone marrow">
+					description = <"Bone marrow">
+				>
+				["at0022"] = <
+					text = <"Other site">
+					description = <"Other metastatic site">
+				>
+				["at0023"] = <
+					text = <"Clinical">
+					description = <"Clinical: Diagnosis made before death but without the benefit of any of the following (2-7)">
+				>
+				["at0024"] = <
+					text = <"Clinical Investigation">
+					description = <"Clinical Investigation: Includes all diagnostic techniques (e.g. X-rays, endoscopy, imaging, ultrasound, exploratory surgery and autopsy) without a tissue diagnosis">
+				>
+				["at0025"] = <
+					text = <"Specific tumour markers">
+					description = <"Specific tumour markers: Includes biochemical and/or immunological markers which are specific for a tumour site">
+				>
+				["at0026"] = <
+					text = <"Cytology">
+					description = <"Cytology: Examination of cells whether from a primary or secondary site, including fluids aspirated using endoscopes or needles. Also including microscopic examination of peripheral blood films and trephine bone marrow aspirates">
+				>
+				["at0027"] = <
+					text = <"Histology of a metastasis">
+					description = <"Histology of a metastasis: Histological examination of tissues from a metastasis, including autopsy specimens">
+				>
+				["at0028"] = <
+					text = <"Histology of a primary tumour">
+					description = <"Histology of a primary tumour: Histological examination of tissue from the primary tumour, however obtained, including all cutting and bone marrow biopsies. Also includes autopsy specimens of a primary tumour">
+				>
+				["at0029"] = <
+					text = <"Unknown">
+					description = <"Unknown: No information on how the diagnosis has been made (e.g. PAS or HISS record only)">
+				>
+				["at0030"] = <
+					text = <"Death Certificate">
+					description = <"Death Certificate: The only information available is from a death certificate.">
+				>
+				["at0031"] = <
+					text = <"Clinical Nurse Specialist indication code">
+					description = <"Recording if and when the patient saw an appropriate site specific clinical nurse specialist. ">
+				>
+				["at0032"] = <
+					text = <"Yes present">
+					description = <"Yes - Clinical Nurse Specialist present when PATIENT given diagnosis">
+				>
+				["at0033"] = <
+					text = <"Yes not present at diagnosis">
+					description = <"Yes, but nurse not present when patient given diagnosis">
+				>
+				["at0034"] = <
+					text = <"Yes not present at diagnosis but saw patient in same session">
+					description = <"Yes - Clinical Nurse Specialist not present when PATIENT given diagnosis but saw PATIENT during same Consultant Clinic Session">
+				>
+				["at0035"] = <
+					text = <"Yes not present a diagnosis but saw patient at different time">
+					description = <"Yes - Clinical Nurse Specialist not present during Consultant Clinic Session when PATIENT given diagnosis but saw PATIENT at other time">
+				>
+				["at0036"] = <
+					text = <"No patient not seen but nurse specialist informed of diagnosis">
+					description = <"\"No - PATIENT not seen at all by Clinical Nurse Specialist but Clinical Nurse Specialist informed of diagnosis">
+				>
+				["at0037"] = <
+					text = <"No patient not seen and nurse specialist NOT informed of diagnosis">
+					description = <"No - PATIENT not seen at all by Clinical Nurse Specialist and Clinical Nurse Specialist not informed of diagnosis">
+				>
+				["at0038"] = <
+					text = <"Not known">
+					description = <"Not Known (Not recorded)">
+				>
+				["at0039"] = <
+					text = <"Cancer recurrence care plan indicator">
+					description = <"An indication of whether a diagnosis of recurrence has been recorded for which a new Cancer Care Plan is required. A new record should be completed for a recurrence.">
+				>
+				["at0040"] = <
+					text = <"Yes including local">
+					description = <"Yes, including local recurrence">
+				>
+				["at0041"] = <
+					text = <"Yes not including local">
+					description = <"Yes, not including local recurrence">
+				>
+				["at0042"] = <
+					text = <"No">
+					description = <"No, not recurrence">
+				>
+				["at0043"] = <
+					text = <"Topography">
+					description = <"The topographical site code for the tumour as defined by ICDO3. This will normally be derived by Registries.">
+				>
+				["at0044"] = <
+					text = <"Tumour laterality">
+					description = <"Tumour laterality identifies the side of the body for a tumour relating to paired organs within a PATIENT.">
+				>
+				["at0045"] = <
+					text = <"Left">
+					description = <"Tumour is located on left side.">
+				>
+				["at0046"] = <
+					text = <"Right">
+					description = <"Tumour is located on right side.">
+				>
+				["at0047"] = <
+					text = <"Midline">
+					description = <"Tumour is located midline.">
+				>
+				["at0048"] = <
+					text = <"Bilateral">
+					description = <"Tumour is located on both sides.">
+				>
+				["at0049"] = <
+					text = <"Not applicable">
+					description = <"Tumour laterality is not applicable.">
+				>
+				["at0050"] = <
+					text = <"Not Known">
+					description = <"Tumour laterality is not known.">
+				>
+				["at0051"] = <
+					text = <"Synchronous tumour indicator">
+					description = <"An indicator of the presence of multiple tumours at a tumour site.">
+				>
+				["at0052"] = <
+					text = <"N No">
+					description = <"No, no synchronous tumours present">
+				>
+				["at0053"] = <
+					text = <"Y Yes">
+					description = <"Yes, synchronous tumours present">
+				>
+				["at0054"] = <
+					text = <"9 Not known">
+					description = <"Not Known">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["QMR96"] = <
+			items = <
+				["at0003"] = <[QMR96::0]>
+				["at0013"] = <[QMR96::02]>
+				["at0014"] = <[QMR96::03]>
+				["at0015"] = <[QMR96::04]>
+				["at0016"] = <[QMR96::06]>
+				["at0017"] = <[QMR96::07]>
+				["at0018"] = <[QMR96::08]>
+				["at0019"] = <[QMR96::09]>
+				["at0020"] = <[QMR96::10]>
+				["at0021"] = <[QMR96::11]>
+				["at0022"] = <[QMR96::99]>
+			>
+		>
+	>
