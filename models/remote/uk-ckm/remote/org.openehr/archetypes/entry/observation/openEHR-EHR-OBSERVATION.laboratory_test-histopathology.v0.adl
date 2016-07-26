@@ -1,6 +1,6 @@
 ﻿archetype (adl_version=1.4; uid=69dfbb94-5540-47c4-b9eb-be25849b1890)
 	openEHR-EHR-OBSERVATION.laboratory_test-histopathology.v0
-specialise
+specialize
 	openEHR-EHR-OBSERVATION.laboratory_test.v0
 
 concept
@@ -18,8 +18,8 @@ language
 description
 	original_author = <
 		["name"] = <"Ian McNicoll">
-		["organisation"] = <"freshEHR Clinical Informatics">
 		["email"] = <"ian@freshehr.com">
+		["organisation"] = <"freshEHR Clinical Informatics">
 		["date"] = <"2014-10-15">
 	>
 	details = <
@@ -50,13 +50,17 @@ Will normally be reported back to the requesting clinician as one component with
 Not to be used to represent an entire cumulative report. This laboratory test result archetype represents only one of the result sets that is usually viewed as a vertical in a cumulative test report. A cumulative report is a view that is constructed from the results represented by multiple OBSERVATION archetypes.
 
 Not to be used to record an Autopsy report, although tests on some specimens that are taken at autopsy may be represented using this archetype.">
+			copyright = <"">
 		>
 	>
-	lifecycle_state = <"in_development">
+	lifecycle_state = <"NotSet">
 	other_contributors = <"Koray Atalag, University of Auckland, New Zealand", "Sharmila Biswas, Dr Sharmila Biswas GP, Australia", "Doug Chesher, PaLMS, Australia", "Stephen Chu, NEHTA, Australia (Editor)", "Matthew Cordell, NEHTA, Australia", "Andre de Wolf, NeHTA, Australia", "Gail Easterbrook, Flinders Medical Centre, Australia", "David Evans, Queensland Health, Australia", "Shahla Foozonkhah, Ocean Informatics, Australia", "Heath Frankel, Ocean Informatics, Australia", "Grahame Grieve, Health Intersections Pyty Ltd, Australia (Editor)", "Sam Heard, Ocean Informatics, Australia", "Mary Kelaher, NEHTA, Australia", "Michael Legg, Michael Legg & associates, Australia", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Mike Martyn, The Hobart Anaesthetic Group, Australia", "Andrew McIntyre, Medical-Objects, Australia", "David McKillop, NEHTA, Australia", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Chris Mitchell, RACGP, Australia", "Stewart Morrison, NEHTA, Australia", "Michael Osborne, Mater Health Services, Australia", "Kyle Shore, Charm Health, Australia", "Michael Thompson, Queensland Health, Australia", "Gordon Tomes, Australian Institute of Health and Welfare, Australia", "Richard Townley-O'Neill, NEHTA, Australia", "David Rowed, VAMC Clinic, Australia (Editor)", "Mona Saleh (Translator)">
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["revision"] = <"0.0.1-alpha">
+		["original_publisher"] = <"openEHR Foundation">
+		["build_uid"] = <"c38d34e4-0249-42f0-b6f7-cf463047604a">
+		["original_namespace"] = <"org.openehr">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["references"] = <"Based on NEHTA 'Pathology Test' archetype. Available from: http://dcm.nehta.org.au/ckm/OKM.html#showarchetype_1013.1.839_8
 
 Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: National E-Health Transition Authority; 2007 May 29 [cited 2011 Jul 11]; Available at http://www.nehta.gov.au/component/docman/doc_download/962-pathology-v10.
@@ -64,10 +68,7 @@ Pathology (Data Specifications) Version 1.0 [Internet]. Sydney, Australia: Natio
 Laboratory Technical Framework, Volume 3: Content, Revision 3.0 [Internet]. USA: IHE International; 2011 May 19; [cited 2011 Jul 11]. Available from: http://www.ihe.net/Technical_Framework/index.cfm#laboratory
 
 Hl7 FHIR Diagnostic Report resource: HL7 FHIR; Available from http://www.hl7.org/implement/standards/fhir/diagnosticreport.html">
-		["build_uid"] = <"c38d34e4-0249-42f0-b6f7-cf463047604a">
-		["original_publisher"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8DF43DCA388FB6E507261353FF09FBF3">
+		["MD5-CAM-1.0.1"] = <"F96FFD5B5E8CF1EF4204B570C4F32139">
 		["custodian_namespace"] = <"org.openehr">
 		["custodian_organisation"] = <"openEHR Foundation">
 	>
@@ -95,7 +96,7 @@ definition
 										include
 											archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen(-[a-zA-Z0-9_]+)*\.v1/}
 									}
-									ELEMENT[at0073] matches {	-- Test status
+									ELEMENT[at0073.1] occurrences matches {0..1} matches {	-- Test status
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
@@ -111,7 +112,7 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0075] matches {	-- Test status timestamp
+									ELEMENT[at0075.1] occurrences matches {0..1} matches {	-- Test status timestamp
 										value matches {
 											DV_DATE_TIME matches {*}
 										}
@@ -281,8 +282,6 @@ definition
 		}
 	}
 
-
-
 ontology
 	term_definitions = <
 		["ar-sy"] = <
@@ -423,6 +422,10 @@ ontology
 					text = <"*Test Report Status(en)">
 					description = <"*The status of the laboratory test result as a whole.(en)">
 				>
+				["at0073.1"] = <
+					text = <"*! - Test status(en)">
+					description = <"*The status of the laboratory test result as a whole.(en)">
+				>
 				["at0074"] = <
 					text = <"*Cancelled(en)">
 					description = <"*The result is unavailable because the test was not started or not completed (also sometimes called 'aborted').(en)">
@@ -431,6 +434,10 @@ ontology
 					text = <"*Test Report Timestamp(en)">
 					description = <"*The date and/or time that the entire result was issued for the recorded ‘Test Report Status’.(en)">
 					fhir_mapping = <"*DiagnosticReport.issued(en)">
+				>
+				["at0075.1"] = <
+					text = <"*! - Test status timestamp(en)">
+					description = <"*The date and/or time that the entire result was issued for the recorded ‘Test Report Status’.(en)">
 				>
 				["at0077"] = <
 					text = <"*Diagnostic Service Category(en)">
@@ -654,6 +661,10 @@ ontology
 					description = <"The status of the laboratory test result as a whole.">
 					fhir_mapping = <"DiagnosticReport.status">
 				>
+				["at0073.1"] = <
+					text = <"Test status">
+					description = <"The status of the laboratory test result as a whole.">
+				>
 				["at0074"] = <
 					text = <"Cancelled">
 					description = <"The result is unavailable because the test was not started or not completed (also sometimes called 'aborted').">
@@ -662,6 +673,10 @@ ontology
 					text = <"Test status timestamp">
 					description = <"The date and/or time that the entire result was issued for the recorded ‘Test Report Status’.">
 					fhir_mapping = <"DiagnosticReport.issued">
+				>
+				["at0075.1"] = <
+					text = <"Test status timestamp">
+					description = <"The date and/or time that the entire result was issued for the recorded ‘Test Report Status’.">
 				>
 				["at0077"] = <
 					text = <"Diagnostic service category">

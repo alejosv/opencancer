@@ -31,7 +31,7 @@ description
 		["build_uid"] = <"a5466476-23bb-4066-b91a-1a519a2a70b8">
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["MD5-CAM-1.0.1"] = <"6D21590F315CAF540418AE9CFE9F8746">
+		["MD5-CAM-1.0.1"] = <"45434D5F99B947A8309FC156AEF0A1B3">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
 		["custodian_organisation"] = <"UK Clinical Models">
 	>
@@ -114,7 +114,7 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Large gland">
-					description = <"Investigation revealed large gland.">
+					description = <"Investigations revealed large gland.">
 				>
 				["at0003"] = <
 					text = <"Significant median lobe">
@@ -126,7 +126,7 @@ ontology
 				>
 				["at0005"] = <
 					text = <"Narrow pelvis / ethnicity">
-					description = <"InvestigationsI revealed a narrow pelvis.">
+					description = <"Investigations revealed a narrow pelvis.">
 				>
 				["at0006"] = <
 					text = <"Previous laparotomy">
@@ -146,11 +146,11 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Nerve spare right intended">
-					description = <"Statement of intent whether prostatic neurovascular bundle (right) sparing is proposed">
+					description = <"Statement of intent whether prostatic neurovascular bundle (right) sparing is proposed.">
 				>
 				["at0013"] = <
 					text = <"Nerve spare left intended">
-					description = <"Statement of intent whether prostatic neurovascular bundle (left) sparing is proposed">
+					description = <"Statement of intent whether prostatic neurovascular bundle (left) sparing is proposed.">
 				>
 				["at0014"] = <
 					text = <"Lymph node dissection intended">
