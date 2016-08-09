@@ -206,7 +206,7 @@
         <Rule path="/data[at0001]/events[at0002]/state[at0009]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/state[at0009]/items[at0008]" max="0" />
         <Rule path="/protocol[at0007]" hide_on_form="true" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.asa_status.v1" concept_name="ASA Physical Status Classification" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.asa_status.v0" concept_name="ASA Physical Status Classification" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]">
           <Rule path="/items[at0014]" max="0" />
         </Items>
       </Item>
@@ -333,8 +333,8 @@
         </constraint>
       </Rule>
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0077]" max="0" />
-      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0073.1]" max="0" />
-      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0075.1]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0073]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0075]" max="0" />
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0100]" max="0" />
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.118]" max="0" />
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0057]" max="0" />
@@ -387,13 +387,13 @@
     <digest id="MD5-CAM-1.0.1">FD053BE0456D849CACD864F274EED32E</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-ACTION.procedure.v1">
-    <digest id="MD5-CAM-1.0.1">B53DE4D15A4711977216BB098A7B3F5A</digest>
+    <digest id="MD5-CAM-1.0.1">232D4A2B8E6A250F5D3A715FBE564726</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.surgical_planning_oc.v0">
-    <digest id="MD5-CAM-1.0.1">45434D5F99B947A8309FC156AEF0A1B3</digest>
+    <digest id="MD5-CAM-1.0.1">36B107E39EB3ACFF3250301579D29E41</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test.v0">
-    <digest id="MD5-CAM-1.0.1">43DAB5D13714EC7C2DF7678FE2C772BE</digest>
+    <digest id="MD5-CAM-1.0.1">64F4898018F4D87C7D8ADAF36558AAF7</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.laboratory_test_panel.v0">
     <digest id="MD5-CAM-1.0.1">4609D4C2AA596C22113E03DFFBB7737C</digest>
@@ -419,8 +419,8 @@
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v1">
     <digest id="MD5-CAM-1.0.1">361412E9CC6A4FE18B28D7869FA3B28A</digest>
   </integrity_checks>
-  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.asa_status.v1">
-    <digest id="MD5-CAM-1.0.1">76575A6A3B720EDD812A00380EC8810B</digest>
+  <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.asa_status.v0">
+    <digest id="MD5-CAM-1.0.1">E22029993B840B52760ABBC106BFCEAF</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1">
     <digest id="MD5-CAM-1.0.1">88AF7BC619F0DF958D2F00293756F398</digest>
@@ -441,12 +441,12 @@
     <digest id="MD5-CAM-1.0.1">9130AAF2B659E0BAD35E8FAC80F8299C</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test-histopathology.v0">
-    <digest id="MD5-CAM-1.0.1">F96FFD5B5E8CF1EF4204B570C4F32139</digest>
+    <digest id="MD5-CAM-1.0.1">5D4C5CFDABE14897E91B4F3FD7B774A3</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.tnm_staging_7th-prostate.v1">
     <digest id="MD5-CAM-1.0.1">E533BECCE960A42F8E540AA1534A4963</digest>
   </integrity_checks>
   <integrity_checks xsi:type="ArchetypeIntegrity" archetype_id="openEHR-EHR-CLUSTER.gleason_score.v0">
-    <digest id="MD5-CAM-1.0.1">CFBCFF9809993C3D94E3B29551BBEF99</digest>
+    <digest id="MD5-CAM-1.0.1">F561BC0D245364912E50D6D2425DB4F3</digest>
   </integrity_checks>
 </template>

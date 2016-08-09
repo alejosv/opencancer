@@ -31,7 +31,7 @@ description
 		["build_uid"] = <"a5466476-23bb-4066-b91a-1a519a2a70b8">
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["MD5-CAM-1.0.1"] = <"45434D5F99B947A8309FC156AEF0A1B3">
+		["MD5-CAM-1.0.1"] = <"36B107E39EB3ACFF3250301579D29E41">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
 		["custodian_organisation"] = <"UK Clinical Models">
 	>
@@ -158,11 +158,11 @@ ontology
 				>
 				["at0015"] = <
 					text = <"MRI quality score">
-					description = <"The quality of the MRI acquired (including whether all required sequences acquired or presence of artifact), scored from 1 (poor) to 5 (excellent)">
+					description = <"The quality of the MRI acquired (including whether all required sequences acquired or presence of artifact), scored from 1 (poor) to 5 (excellent).">
 				>
 				["at0016"] = <
 					text = <"Grade of difficulty">
-					description = <"A score to describe the difficulty of the case by considering all the recorded factors. From 1 (easy) to 3 (difficult). ">
+					description = <"A score to describe the difficulty of the case by considering all the recorded factors. From 1 (easy) to 3 (difficult).">
 					comment = <"Different sites will use the score for different purposes - eg which operating list the patient goes on, who can do the operation (trainee, experienced consultant etc).">
 				>
 				["at0017"] = <

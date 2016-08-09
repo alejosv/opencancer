@@ -42,7 +42,7 @@ Available from: http://www.rcpath.org/index.asp?PageID=1164
 College of American Pathologists. Protocol for the examination of specimens from patients with invasive carcinomas of the prostate gland [Internet]. 2007 Apr ;[cited 2009 Jul 30 ] Available from: http://www.cap.org/apps/docs/committees/cancer/cancer_protocols/2006/prostate06_ckw.pdf
 
 Epstein JI, Zelefsky MJ, Sjoberg DD, Nelson JB, Egevad L, Magi-Galluzzi C, Vickers AJ, Parwani AV, Reuter VE, Fine SW, Eastham JA. A contemporary prostate cancer grading system: a validated alternative to the Gleason score. European urology. 2016 Mar 31;69(3):428-35.">
-		["MD5-CAM-1.0.1"] = <"CFBCFF9809993C3D94E3B29551BBEF99">
+		["MD5-CAM-1.0.1"] = <"F561BC0D245364912E50D6D2425DB4F3">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
 		["custodian_organisation"] = <"UK Clinical Models">
 	>
@@ -103,7 +103,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Gleason Score">
-					description = <"Gleason Score (ISUP2005 version) - a prostate cancer grading score ratified by the International Society of Urological Pathologists (ISUP), including Gleason Grade Groups. ">
+					description = <"Gleason Score (ISUP2005 version) - a prostate cancer grading score ratified by the International Society of Urological Pathologists (ISUP), including Gleason Grade Groups.">
 				>
 				["at0166"] = <
 					text = <"Primary Gleason grade">
@@ -119,7 +119,7 @@ ontology
 				>
 				["at0197"] = <
 					text = <"Total Gleason score">
-					description = <"The sum of the primary and secondary Gleason grades. ">
+					description = <"The sum of the primary and secondary Gleason grades.">
 					comment = <"The total Gleason score does not take account of the tertiary Gleason grade.">
 				>
 				["at0250"] = <
